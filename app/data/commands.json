@@ -283,11 +283,31 @@
         }]
     },
     "Mod Only": {
+        "mod": 1,
         "commands": [
         {
             "cmd": "chatchart",
             "desc": "Generate a graph of most recent users chatting"
         },{
+            "cmd": "seen",
+            "desc": "Check when a user was last seen active"
+        },
+        {
+            "cmd": "wordcloud",
+            "desc": "Generate a wordcloud of current channel"
+        }]
+    },
+    "Admin Only": {
+        "admin": 1,
+        "commands": [
+        {
+            "cmd": "chatchart",
+            "desc": "Generate a graph of most recent users chatting"
+        },{
+            "cmd": "seen",
+            "desc": "Check when a user was last seen active"
+        },
+        {
             "cmd": "wordcloud",
             "desc": "Generate a wordcloud of current channel"
         }]
