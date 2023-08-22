@@ -14,6 +14,7 @@ $favicon = "faviconit"; // Default: faviconit (https://faviconit.com). Can be cu
 $footerLeft = "<a href='https://discord.com/invite/joerogan'>The Joe Rogan Experience Discord</a>"; // Optional
 $footerCenter = ""; // Optional
 $footerRight = "&copy; 2023"; // Optional
+$fullscreen = true;  // Website takes full screen on desktop
 $modCode = "lol"; // Mod commands password (?mod=password)
 $adminCode = "woo"; // Admin commands password (?admin=password)
 
@@ -21,10 +22,14 @@ $adminCode = "woo"; // Admin commands password (?admin=password)
 #$background = 
 
 // Advanced Config
+// cache page requires /app/data to be writable
 $cachePage = true; // Cache index.php for faster loading
 $cacheExpires = 15; // Default: 3600 (1 Hour). 0 for never (must flush manually)
 $metaAuthor = "Catalyst";
 $metaDescription = "Commands and information for {$botName} Discord Bot";
 $metaDescriptionEmbed = ""; // Social media embed description. leave blank to use $metaDescription
 
+/////////////////////////////////////////
+//     DO NOT edit below this line     //
+/////////////////////////////////////////
 include("app/data/main.php");

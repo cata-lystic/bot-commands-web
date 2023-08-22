@@ -12,22 +12,29 @@ function cacheClear() {
   }
 }
 
+
+
 // Check if ?mod or ?admin or ?flush was set and code is correct
 $authMod = ($_GET['mod'] ?? false) && ($_GET['mod'] == $modCode) ? true : false;
 $authAdmin = ($_GET['admin'] ?? false) && ($_GET['admin'] == $adminCode) ? true : false;
 $cacheFlush = $_GET['flush'] ?? false;
+$full = ($fullscreen == true) ? "container-fluid" : "container";
 
 if ($cacheFlush != false)
   cacheClear();
 
 if ($cachePage == true) {
 
+  // Make sure app/data directory is writable
+  if (!is_writable("app/data")) 
+    die("<p>To use caching, the /app/data folder must be writable.</p><p>To disable caching, set \$cachePage = false; in index.php</p>");
+
   if ($authAdmin == true && file_exists("app/data/cacheAdmin.html")) {
     $file = "app/data/cacheAdmin.html";
   } else if ($authMod == true && file_exists("app/data/cacheMod.html")) {
     $file = "app/data/cacheMod.html";
   } else if ($authMod == false && $authAdmin == false && file_exists("app/data/cache.html")) {
-    echo "cache";
+    $file = "app/data/cache.html";
   } else {
     $file = false;
   }
@@ -113,14 +120,33 @@ $metaDescriptionEmbed = ($metaDescriptionEmbed != "") ? $metaDescriptionEmbed : 
 <body>
 
 <header>
-  <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
-      <div class="container-fluid">
+  <nav class="<?php echo $full; ?> navbar navbar-expand-lg navbar-dark bg-dark">
+      <div class="col-12 ps-3">
         <a class="navbar-brand" href="#"><img src="<?php echo $logo; ?>" height="30"  /> &nbsp;<?php echo $botName; ?> Commands</a>
       </div>
     </nav>
 </header>
 
-<div id="main" class="container-fluid">
+<div id="pluginMenu" class="<?php echo $full; ?> py-1 ps-3">
+
+  <div class="row">
+
+    <?php
+    foreach ($cmds as $category => $cmdVals) {
+
+      // Check if this is a mod or admin only command section
+      if ((isset($cmdVals['mod']) && $authMod !== true && $authAdmin != true) || (isset($cmdVals['admin']) && $authAdmin != true))
+        continue;
+
+      echo '<div class="col-auto m-2 p-1"><a href="#'.$category.'">'.$category.'</a></div>';
+    }
+    ?>
+
+  </div>
+
+</div>
+
+<div id="main" class="<?php echo $full; ?>">
 
   <?php
   if ($header != "") {
@@ -152,32 +178,42 @@ $metaDescriptionEmbed = ($metaDescriptionEmbed != "") ? $metaDescriptionEmbed : 
       $x = 1; // Amount of commands in this section
 
       // Create category section
-      echo "<div class='row pluginRow'>
-      <div class='col-12 pt-1 p-1 pt-3 pt-lg-3 px-3 pluginCol'>
-            <h3>{$category}</h3>
-        </div>
-      <div class='col-12 col-md-6 col-lg-5 col-xl-4 pb-lg-4'>";
+      echo "<a name='{$category}'></a>
+      <div class='row pluginRow'>
+        <div class='col-12 pt-1 p-1 pt-3 pt-lg-3 px-3 pluginCol'>
+              <h3>{$category}</h3>
+          </div>
+        <div class='col-12 col-md-6 col-lg-5 col-xl-5 pb-lg-4'>";
 
-      // Count how many commands are in this category and cut in half
-      $catCount = ceil(count($cmdVals['commands']) / 2);
+        // Count how many commands are in this category and cut in half
+        $catCount = ceil(count($cmdVals['commands']) / 2);
 
-      // Loop through each command in this category
-      foreach($cmdVals['commands'] as $key => $val) {
+        // Loop through each command in this category
+        foreach($cmdVals['commands'] as $key => $val) {
 
-        // Print the command and description
-        echo "<p><strong>{$prefix}{$val['cmd']}</strong> {$val['desc']}</p>";
+          // Check if this is a mod or admin only command
+          if ((isset($val['mod']) && $authMod !== true && $authAdmin != true) || (isset($val['admin']) && $authAdmin != true)) {
+            continue;
+          } elseif ((isset($val['mod']) && ($authMod == true && $authAdmin != true)) || (isset($val['admin']) && $authAdmin == true)) {
+            $modAsterisk = "<span class='badge bg-primary'>Mod</span>";
+          } else {
+            $modAsterisk = "";
+          }
 
-        if ($x == $catCount) { // new column if over half of commands are printed
-          echo "</div>
-          <div class='col-12 col-md-6 col-lg-5 col-xl-4 mt-0 mt-lg-0 pb-3'>";
-        }
-        $x++;
-        $rows++;
+          // Print the command and description
+          echo "<p><strong>{$prefix}{$val['cmd']}</strong> {$val['desc']} {$modAsterisk}</p>";
+
+          if ($x == $catCount) { // new column if over half of commands are printed
+            echo "</div>
+            <div class='col-12 col-md-6 col-lg-5 col-xl-5 mt-0 mt-lg-0 pb-3'>";
+          }
+          $x++;
+          $rows++;
       }
 
       // End category section
       echo "
-       </div>
+        </div>
       </div>";
 
     }
@@ -193,7 +229,7 @@ $metaDescriptionEmbed = ($metaDescriptionEmbed != "") ? $metaDescriptionEmbed : 
 <?php
 if ($footerLeft != "" || $footerCenter != "" || $footerRight != "") {
   echo "
-  <footer class='container-fluid pt-3'>
+  <footer class='{$full} pt-3'>
     <div class='row'>
       <div id='footerLeft' class='col-4 ps-3'><p class=''>$footerLeft</p></div>
       <div id='footerCenter' class='col-4'><p>$footerCenter</p></div>
@@ -253,6 +289,5 @@ if ($cachePage == true) {
   file_put_contents($file, $page);
 
   echo $page;
-  echo "heh";
 }
 ?>

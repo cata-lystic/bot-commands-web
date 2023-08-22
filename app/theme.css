@@ -50,6 +50,34 @@ footer { background-color: var(--footer) !important;}
   background: var(--secondary);
 }
 
+#pluginMenu {
+  background: rgb(31, 29, 29);
+  width: auto;
+  max-width: auto;
+  max-height: auto;
+  height: auto;
+  overflow-x: none;
+  overflow: auto;
+  white-space: nowrap;
+}
+
+#pluginMenu a {
+  text-decoration: none;
+  color: #ffffff;
+}
+
+#pluginMenu div {
+  display: inline-block;
+  text-align: center;
+  text-decoration: none;
+}
+
+#pluginMenu .col-auto:hover {
+  background: rgb(47, 47, 47);
+  border-radius: 5px;
+}
+
+
 /* FAB Scroll to top button */
 /* I'm actually giving W3Schools credit for this one */
 #scrollButton {

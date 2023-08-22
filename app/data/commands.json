@@ -11,12 +11,6 @@
             "cmd": "disconnect",
             "desc": "Disconnect from the voice channel"
         },{
-            "cmd": "lyrics playing",
-            "desc": "Lyrics of currently playing song"
-        },{
-            "cmd": "lyrics search",
-            "desc": "Search lyrics song"
-        },{
             "cmd": "now",
             "desc": "Now playing"
         },{
@@ -216,12 +210,6 @@
         },{
             "cmd": "wiki",
             "desc": "Search Wikipedia"
-        },{
-            "cmd": "wordclouds",
-            "desc": "Create a Wordcloud of the current channel"
-        },{
-            "cmd": "youtube",
-            "desc": "Search on YouTube"
         }]
     },
     "Random Images": {
@@ -291,10 +279,12 @@
         },{
             "cmd": "seen",
             "desc": "Check when a user was last seen active"
-        },
-        {
+        },{
             "cmd": "wordcloud",
             "desc": "Generate a wordcloud of current channel"
+        },{
+            "cmd": "youtube sub",
+            "desc": "Subscribe YT channel to Discord channel"
         }]
     },
     "Admin Only": {
