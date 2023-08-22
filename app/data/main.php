@@ -17,25 +17,17 @@ $authMod = ($_GET['mod'] ?? false) && ($_GET['mod'] == $modCode) ? true : false;
 $authAdmin = ($_GET['admin'] ?? false) && ($_GET['admin'] == $adminCode) ? true : false;
 $cacheFlush = $_GET['flush'] ?? false;
 
-echo $authMod;
-
-
-if ($cacheFlush != false) {
+if ($cacheFlush != false)
   cacheClear();
-}
 
 if ($cachePage == true) {
 
   if ($authAdmin == true && file_exists("app/data/cacheAdmin.html")) {
     $file = "app/data/cacheAdmin.html";
-    echo "cache admin";
   } else if ($authMod == true && file_exists("app/data/cacheMod.html")) {
-    echo filemtime("app/data/cacheMod.html");
-    echo "cache  mod";
     $file = "app/data/cacheMod.html";
   } else if ($authMod == false && $authAdmin == false && file_exists("app/data/cache.html")) {
     echo "cache";
-    $file = "app/data/cache.html";
   } else {
     $file = false;
   }

@@ -8,7 +8,7 @@ $botName = "JREbot";
 $botPrefix = "."; // Bot's command prefix
 $botPrefixName = "period"; // prefix spelled out
 $botPrefixShow = false; // Show prefix on all commands
-$logo = "app/img/discord.png";
+$logo = "app/img/logo.png";
 $header = "All commands begin with the $botPrefix ($botPrefixName) prefix. Most commands can only be used in the #bots channel."; // Optional
 $favicon = "faviconit"; // Default: faviconit (https://faviconit.com). Can be custom URL/file.
 $footerLeft = "<a href='https://discord.com/invite/joerogan'>The Joe Rogan Experience Discord</a>"; // Optional
