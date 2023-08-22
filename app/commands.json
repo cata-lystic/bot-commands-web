@@ -1,0 +1,295 @@
+{
+	"Audio": {
+        "commands": [
+        {
+            "cmd": "bump",
+            "desc": "Bump a track number to the top of queue"
+        },{
+            "cmd": "bumpplay",
+            "desc": "Force play a URL or search for a track"
+        },{
+            "cmd": "disconnect",
+            "desc": "Disconnect from the voice channel"
+        },{
+            "cmd": "lyrics playing",
+            "desc": "Lyrics of currently playing song"
+        },{
+            "cmd": "lyrics search",
+            "desc": "Search lyrics song"
+        },{
+            "cmd": "now",
+            "desc": "Now playing"
+        },{
+            "cmd": "pause",
+            "desc": "Pause or resume a playing track"
+        },{
+            "cmd": "play",
+            "desc": "Play a song from YouTube (search or URL)"
+        },{
+            "cmd": "prev",
+            "desc": "Skip to the start of the previously played track"
+        },{
+            "cmd": "queue",
+            "desc": "List songs in queue"
+        },{
+            "cmd": "remove",
+            "desc": "Remove a specific track number from the queue"
+        },{
+            "cmd": "repeat",
+            "desc": "Toggle repeat"
+        },{
+            "cmd": "search",
+            "desc": "Pick a track with a search"
+        },{
+            "cmd": "seek",
+            "desc": "Seek ahead/behind by seconds or to a specific time"
+        },{
+            "cmd": "shuffle",
+            "desc": "Toggle shuffle"
+        },{
+            "cmd": "skip",
+            "desc": "Skip to the next track, or a given track number"
+        },{
+            "cmd": "stop",
+            "desc": "Stop playback and clear queue"
+        },{
+            "cmd": "volume",
+            "desc": "Sets the volume (1%-150%)"
+        }]
+    },
+    "Comics": {
+        "commands": [
+        {
+            "cmd": "calvin",
+            "desc": "Calvin and Hobbes"
+        },{
+            "cmd": "garfield",
+            "desc": "Garfield"
+        },{
+            "cmd": "ohno",
+            "desc": "Webcomic Name"
+        },{
+            "cmd": "pbf",
+            "desc": "The Perry Bible Fellowship"
+        },{
+            "cmd": "sarah",
+            "desc": "Sarah's Scribbles"
+        },{
+            "cmd": "smbc",
+            "desc": "Saturday Morning Breakfast Cereal"
+        },{
+            "cmd": "xkcd",
+            "desc": "XKCD"
+        }]
+    },
+    "Conversions": {
+        "commands": [
+        {
+            "cmd": "c",
+            "desc": "Celsius to Fahrenheit"
+        },{
+            "cmd": "f",
+            "desc": "Fahrenheit to Celsius"
+        },{
+            "cmd": "kg",
+            "desc": "Kilograms to Pounds"
+        },{
+            "cmd": "km",
+            "desc": "Kilometers to Miles"
+        },{
+            "cmd": "lb",
+            "desc": "Pounds to Kilograms"
+        },{
+            "cmd": "mi",
+            "desc": "Miles to Kilometers"
+        }]
+    },
+    "Crypto": {
+        "commands": [
+        {
+            "cmd": "btc",
+            "desc": "Convert from BTC to given currency"
+        },{
+            "cmd": "coins",
+            "desc": "Show chart of top crypto coins"
+        },{
+            "cmd": "crypto",
+            "desc": "Display latest info about specified crypto"
+        },{
+            "cmd": "currency",
+            "desc": "Convert between two different currencies"
+        },{
+            "cmd": "doge",
+            "desc": "Convert from DOGE to given currency"
+        },{
+            "cmd": "eth",
+            "desc": "Convert from ETH to given currency"
+        },{
+            "cmd": "ltc",
+            "desc": "Convert from LTC to given currency"
+        },{
+            "cmd": "stock",
+            "desc": "Show current ticker symbol price"
+        },{
+            "cmd": "xmr",
+            "desc": "Converts from XMR to given currency"
+        }]
+    },
+    "Games": {
+        "commands": [
+        {
+            "cmd": "bombparty",
+            "desc": "Start a game of Bombparty (Multiplayer)"
+        },{
+            "cmd": "fast",
+            "desc": "Race to type the fastest word (Multiplayer)"
+        },{
+            "cmd": "hangman",
+            "desc": "Play a game of Hangman"
+        },{
+            "cmd": "long",
+            "desc": "Race to type the longest word (Multiplayer)"
+        },{
+            "cmd": "mix",
+            "desc": "Play a mixture of Bombparty, Fast, Long, and Most (Multiplayer)"
+        },{
+            "cmd": "most",
+            "desc": "Race to type the most words (Multiplayer)"
+        },{
+            "cmd": "rps",
+            "desc": "Play Rock, Paper, Scissors"
+        },{
+            "cmd": "typerace",
+            "desc": "Play TypeRace (Multiplayer)"
+        }]
+    },
+    "General": {
+        "commands": [
+        {
+            "cmd": "8",
+            "desc": "Ask 8 ball a question"
+        },{
+            "cmd": "apod",
+            "desc": "Astronomy picture of the day"
+        },{
+            "cmd": "avatar",
+            "desc": "Show user's full size avatar"
+        },{
+            "cmd": "bible",
+            "desc": "Search for a Bible verse"
+        },{
+            "cmd": "calc",
+            "desc": "Math"
+        },{
+            "cmd": "choose",
+            "desc": "Choose between multiple options"
+        },{
+            "cmd": "dad",
+            "desc": "Get a random dad joke"
+        },{
+            "cmd": "define",
+            "desc": "Get dictionary definition of word"
+        },{
+            "cmd": "dice XdY",
+            "desc": "Roll any sided dice. X = amount, Y = sides"
+        },{
+            "cmd": "flip",
+            "desc": "Flip a coin... or a user"
+        },{
+            "cmd": "google",
+            "desc": "Search Google"
+        },{
+            "cmd": "help",
+            "desc": "Get DM'd a full list of commands"
+        },{
+            "cmd": "penis",
+            "desc": "Compare your e-penis with other users"
+        },{
+            "cmd": "roll",
+            "desc": "Roll a random number"
+        },{
+            "cmd": "stopwatch",
+            "desc": "Start or stop the stopwatch"
+        },{
+            "cmd": "urban",
+            "desc": "Search Urban Dictionary"
+        },{
+            "cmd": "wiki",
+            "desc": "Search Wikipedia"
+        },{
+            "cmd": "wordclouds",
+            "desc": "Create a Wordcloud of the current channel"
+        },{
+            "cmd": "youtube",
+            "desc": "Search on YouTube"
+        }]
+    },
+    "Random Images": {
+        "commands": [
+        {
+            "cmd": "art",
+            "desc": "Random art"
+        },{
+            "cmd": "birb",
+            "desc": "Bird picture"
+        },{
+            "cmd": "cat",
+            "desc": "Cat picture"
+        },{
+            "cmd": "catfact",
+            "desc": "Cat fact and picture"
+        },{
+            "cmd": "coffee",
+            "desc": "Coffe picture"
+        },{
+            "cmd": "cute",
+            "desc": "Cute picture"
+        },{
+            "cmd": "dog",
+            "desc": "Dog picture"
+        },{
+            "cmd": "dogfact",
+            "desc": "Dog fact and picture"
+        },{
+            "cmd": "duck",
+            "desc": "Duck image"
+        },{
+            "cmd": "ferret",
+            "desc": "Ferret image"
+        },{
+            "cmd": "fox",
+            "desc": "Fox image"
+        },{
+            "cmd": "lizard",
+            "desc": "Lizard image"
+        },{
+            "cmd": "meme",
+            "desc": "Random meme"
+        },{
+            "cmd": "panda",
+            "desc": "Panda image"
+        },{
+            "cmd": "pandafact",
+            "desc": "Panda fact and image"
+        },{
+            "cmd": "photo",
+            "desc": "Random photography"
+        },{
+            "cmd": "shiba",
+            "desc": "Shiba Inu image"
+        },{
+            "cmd": "wallpaper",
+            "desc": "Random wallpaper"
+        }]
+    },
+    "Mod Only": {
+        "commands": [
+        {
+            "cmd": "chatchart",
+            "desc": "Generate a graph of most recent users chatting"
+        },{
+            "cmd": "wordcloud",
+            "desc": "Generate a wordcloud of current channel"
+        }]
+    }
+}

@@ -1,0 +1,73 @@
+:root {
+  --background: #2f2f2f;
+  --secondary: #393939;
+  --navbar: #0f2839;
+  --footer: #0f2839;
+  --fontColor: #e8e9eb;
+  --linkColor: #0c93ed;
+  --commandColor: #41b0fa;
+}
+
+body {
+  background: var(--background);
+  color: var(--fontColor);
+  scroll-behavior: smooth;
+}
+
+a {
+  color: var(--linkColor);
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
+#commandsBox div p {
+  padding: 1px 5px;
+  margin: 4px 0px;
+}
+
+#commandsBox div p:hover {
+  background-color: #0f2839;
+  border-radius: 8px;
+}
+
+strong {
+  color: var(--commandColor);
+  margin-right: 15px;
+}
+
+.navbar { background-color: var(--navbar) !important; }
+
+footer { background-color: var(--footer) !important;}
+
+#footerCenter { text-align: center; }
+
+#footerRight { text-align: right; }
+
+.pluginRow:nth-of-type(odd) {
+  background: var(--secondary);
+}
+
+/* FAB Scroll to top button */
+/* I'm actually giving W3Schools credit for this one */
+#scrollButton {
+  display: none; /* Hidden by default */
+  position: fixed; /* Fixed/sticky position */
+  bottom: 80px; /* Place the button at the bottom of the page */
+  right: 30px; /* Place the button 30px from the right */
+  z-index: 99; /* Make sure it does not overlap */
+  border: none; /* Remove borders */
+  outline: none; /* Remove outline */
+  background-color: var(--navbar); /* Set a background color */
+  color: var(--fontColor); /* Text color */
+  cursor: pointer; /* Add a mouse pointer on hover */
+  padding: 15px 20px; /* Some padding */
+  border-radius: 10px; /* Rounded corners */
+  font-size: 18px; /* Increase font size */
+}
+
+#scrollButton:hover {
+  background-color: #555; /* Add a dark-grey background on hover */
+}
