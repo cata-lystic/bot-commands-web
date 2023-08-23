@@ -127,24 +127,31 @@ $metaDescriptionEmbed = ($metaDescriptionEmbed != "") ? $metaDescriptionEmbed : 
     </nav>
 </header>
 
-<div id="pluginMenu" class="<?php echo $full; ?> py-1 ps-3">
 
-  <div class="row">
+<?php
+if ($menubar == true) {
 
-    <?php
-    foreach ($cmds as $category => $cmdVals) {
+  echo '
+  <div id="pluginMenu" class="'.$full.' py-1 ps-3">
 
-      // Check if this is a mod or admin only command section
-      if ((isset($cmdVals['mod']) && $authMod !== true && $authAdmin != true) || (isset($cmdVals['admin']) && $authAdmin != true))
-        continue;
+    <div class="row">';
 
-      echo '<div class="col-auto m-2 p-1"><a href="#'.$category.'">'.$category.'</a></div>';
-    }
-    ?>
+      foreach ($cmds as $category => $cmdVals) {
+        // Check if this is a mod or admin only command section
+        if (
+          (isset($cmdVals['mod']) && $authMod !== true && $authAdmin != true) || 
+          (isset($cmdVals['admin']) && $authAdmin != true) || 
+          $menubarHideSmall == true && isset($cmdVals['header']) && $cmdVals['header'] == "small")
+          continue;
 
-  </div>
+        echo '<div class="col-auto m-2 p-1"><a href="#'.$category.'">'.$category.'</a></div>';
+      }
 
-</div>
+    echo '</div>
+
+  </div>';
+  }
+  ?>
 
 <div id="main" class="<?php echo $full; ?>">
 
@@ -176,12 +183,21 @@ $metaDescriptionEmbed = ($metaDescriptionEmbed != "") ? $metaDescriptionEmbed : 
         continue;
 
       $x = 1; // Amount of commands in this section
+      $headerSize = (isset($cmdVals['header']) && $cmdVals['header'] == "small") ? "h5" : "h3";
 
+      $headerAsterisk = "";
+      if (isset($cmdVals['badge'])) {
+        if (!is_array($cmdVals['badge'])) $cmdVals['badge'] = array($cmdVals['badge']);
+        foreach ($cmdVals['badge'] as $b) {
+          $headerAsterisk .= "<span class='badge bg-primary' style='font-size: 0.48em'>$b</span> ";
+        }
+      }
+      
       // Create category section
       echo "<a name='{$category}'></a>
       <div class='row pluginRow'>
         <div class='col-12 pt-1 p-1 pt-3 pt-lg-3 px-3 pluginCol'>
-              <h3>{$category}</h3>
+              <{$headerSize}>{$category} {$headerAsterisk}</{$headerSize}>
           </div>
         <div class='col-12 col-md-6 col-lg-5 col-xl-5 pb-lg-4'>";
 
@@ -190,6 +206,15 @@ $metaDescriptionEmbed = ($metaDescriptionEmbed != "") ? $metaDescriptionEmbed : 
 
         // Loop through each command in this category
         foreach($cmdVals['commands'] as $key => $val) {
+
+          // Check if this command has a badge array
+          $chanAsterisk = "";
+          if (isset($val['badge'])) {
+            if (!is_array($val['badge'])) $val['badge'] = array($val['badge']);
+            foreach ($val['badge'] as $b) {
+              $chanAsterisk .= "<span class='badge bg-primary'>$b</span> ";
+            }
+          }
 
           // Check if this is a mod or admin only command
           if ((isset($val['mod']) && $authMod !== true && $authAdmin != true) || (isset($val['admin']) && $authAdmin != true)) {
@@ -201,7 +226,7 @@ $metaDescriptionEmbed = ($metaDescriptionEmbed != "") ? $metaDescriptionEmbed : 
           }
 
           // Print the command and description
-          echo "<p><strong>{$prefix}{$val['cmd']}</strong> {$val['desc']} {$modAsterisk}</p>";
+          echo "<p><strong>{$prefix}{$val['cmd']}</strong> {$val['desc']} {$chanAsterisk} {$modAsterisk}</p>";
 
           if ($x == $catCount) { // new column if over half of commands are printed
             echo "</div>

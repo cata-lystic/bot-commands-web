@@ -1,5 +1,6 @@
 {
 	"Audio": {
+        "badge": "#music-commands",
         "commands": [
         {
             "cmd": "bump",
@@ -77,6 +78,7 @@
         }]
     },
     "Conversions": {
+        "badge": "#main",
         "commands": [
         {
             "cmd": "c",
@@ -99,6 +101,7 @@
         }]
     },
     "Crypto": {
+        "badge": "#investing",
         "commands": [
         {
             "cmd": "btc",
@@ -157,6 +160,20 @@
             "desc": "Play TypeRace (Multiplayer)"
         }]
     },
+    "Adventure Game": {
+        "header": "small",
+        "commands": [
+        {
+            "cmd": "a",
+            "desc": "Start an adventure"
+        },{
+            "cmd": "apayday",
+            "desc": "Get some free gold"
+        },{
+            "cmd": "help Adventure",
+            "desc": "View Adventure help menu"
+        }]
+    },
     "General": {
         "commands": [
         {
@@ -173,16 +190,20 @@
             "desc": "Search for a Bible verse"
         },{
             "cmd": "calc",
-            "desc": "Math"
+            "desc": "Math",
+            "badge": "#main"
         },{
             "cmd": "choose",
-            "desc": "Choose between multiple options"
+            "desc": "Choose between multiple options",
+            "badge": "#main"
         },{
             "cmd": "dad",
-            "desc": "Get a random dad joke"
+            "desc": "Get a random dad joke",
+            "badge": "#main"
         },{
             "cmd": "define",
-            "desc": "Get dictionary definition of word"
+            "desc": "Get dictionary definition of word",
+            "badge": "#main"
         },{
             "cmd": "dice XdY",
             "desc": "Roll any sided dice. X = amount, Y = sides"
@@ -206,10 +227,12 @@
             "desc": "Start or stop the stopwatch"
         },{
             "cmd": "urban",
-            "desc": "Search Urban Dictionary"
+            "desc": "Search Urban Dictionary",
+            "badge": "#main"
         },{
             "cmd": "wiki",
-            "desc": "Search Wikipedia"
+            "desc": "Search Wikipedia",
+            "badge": ["#main"]
         }]
     },
     "Random Images": {

@@ -9,7 +9,10 @@ $botPrefix = "."; // Bot's command prefix
 $botPrefixName = "period"; // prefix spelled out
 $botPrefixShow = false; // Show prefix on all commands
 $logo = "app/img/logo.png";
-$header = "All commands begin with the $botPrefix ($botPrefixName) prefix. Most commands can only be used in the #bots channel."; // Optional
+$header = "All commands begin with the $botPrefix ($botPrefixName) prefix.
+<p>Most commands can only be used in the #bots channel unless labeled otherwise.</p>"; // Optional
+$menubar = true; // Show quick menubar of categories
+$menubarHideSmall = true; // Hide categories with the "header": "small" tag
 $favicon = "faviconit"; // Default: faviconit (https://faviconit.com). Can be custom URL/file.
 $footerLeft = "<a href='https://discord.com/invite/joerogan'>The Joe Rogan Experience Discord</a>"; // Optional
 $footerCenter = ""; // Optional
@@ -24,7 +27,7 @@ $adminCode = "woo"; // Admin commands password (?admin=password)
 // Advanced Config
 // cache page requires /app/data to be writable
 $cachePage = true; // Cache index.php for faster loading
-$cacheExpires = 15; // Default: 3600 (1 Hour). 0 for never (must flush manually)
+$cacheExpires = 3600; // Default: 3600 (1 Hour). 0 for never (must flush manually)
 $metaAuthor = "Catalyst";
 $metaDescription = "Commands and information for {$botName} Discord Bot";
 $metaDescriptionEmbed = ""; // Social media embed description. leave blank to use $metaDescription
